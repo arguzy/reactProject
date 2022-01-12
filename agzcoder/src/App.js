@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navigation/Navbar';
+import Home from './components/Pages/Home';
+import Contact from './components/Pages/Contact';
+import Faqs from './components/Pages/Faqs';
+import Store from './components/Pages/Store';
+import OrderSumary from './components/Pages/OrderSumary';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>ARIEL ZYBALA</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <BrowserRouter>
+        <header>
+          <Navbar/>
+              <Routes>
+                <Route Path='Home' element={Home} />
+                <Route Path='Contact' element={Contact} />
+                <Route Path='Faqs' element={Faqs} />
+                <Route Path='Store' element={Store} />
+                <Route Path='OrderSumary' element={OrderSumary} />
+              </Routes>
+        </header>
+      </BrowserRouter>
+    </Fragment>
+    
   );
 }
 
