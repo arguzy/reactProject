@@ -1,5 +1,8 @@
 import React, { Fragment } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+import './Styles.css';
+
 import Navbar from './components/Navigation/Navbar';
 import Home from './components/Pages/Home';
 import Contact from './components/Pages/Contact';
@@ -16,11 +19,11 @@ function App() {
         <header>
           <Navbar/>
               <Routes>
-                <Route Path='Home' element={Home} />
-                <Route Path='Contact' element={Contact} />
-                <Route Path='Faqs' element={Faqs} />
-                <Route Path='Store' element={Store} />
-                <Route Path='OrderSumary' element={OrderSumary} />
+                <Route exact path='/Home' element={<Home/>} />
+                <Route path='/Contact' element={<Contact/>} />
+                <Route path='/Faqs' element={<Faqs/>} />
+                <Route path='/Store' element={<Store/>} />
+                <Route path='/OrderSumary' element={<OrderSumary/>} />
               </Routes>
         </header>
       </BrowserRouter>

@@ -1,0 +1,71 @@
+.cardProducts {
+    margin: .5em;
+    width: 300px;
+	height: 530px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    overflow-y: clip;
+	background: #fff5e1;
+	box-shadow: rgb(163, 163, 163) 0px 30px 25px -15px,
+    rgba(0, 0, 0, 0.309) -10px 30px 40px 15px inset;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content:start;
+}
+
+.cardProducts__Image{
+    width: 300px;
+	height: 190px;
+}
+
+.cardProducts__titleBox{
+    padding: 15px 0px;
+  }
+
+.cardProducts__title{
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+.cardProducts__btnDescription{
+    width: 300px;
+    padding: 0px 15px 15px 0px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+.cardProducts__textBox{
+    height: 0%;
+    position: absolute;
+    padding: 0px 20px 15px 20px;
+    text-align: justify;
+    font-family: 'Lexend Deca' , sans-serif;
+    font-size: .8em;
+    visibility: hidden;
+
+}
+.textBoxOpen{
+    height: fit-content;
+    position: relative;
+    visibility: initial;
+}
+
+.cardProducts__amountBox{
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.cardProducts__price{
+    font-family: 'Lexend Deca' , sans-serif;
+    font-size: 1em;
+    font-weight: 800;
+}
+
+.cardProducts__btnBuyBox{
+    padding: 25px 0px 10px 0px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}

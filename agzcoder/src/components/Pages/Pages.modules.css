@@ -1,0 +1,5 @@
+.menu__Appetizer{
+    margin-top: 4em;
+    display: flex;
+    flex-flow: wrap;
+}
