@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css';
-import { ImCart } from 'react-icons/im';
 import {FaBars} from 'react-icons/fa'
+import Cart from '../Widgets/Cart';
+import './NavBar.css';
 
     const Navbar = () => {
         
@@ -16,7 +16,7 @@ import {FaBars} from 'react-icons/fa'
                 <div className='nav__motley'>
                     <Link to='Home' className='nav__logo'>LA BOHEME</Link>
                     <div className='nav__shop'>
-                        <span><Link to={'OrderSumary'} className='nav__shopIcon'><ImCart/></Link><p className='nav__shopConunt'>0</p></span>
+                        <Cart/>
                     </div>
                 </div>
                 <button className='nav__btnToggle' onClick={ToggleMenu}><FaBars/></button>
