@@ -1,0 +1,27 @@
+.load{
+	width:192px;
+	height:15px;
+	overflow:hidden;
+	background-color:rgb(255, 187, 0);
+	border-radius:8px;
+}
+
+.load__bar{
+    width:192px;
+	height:15px;
+	margin-top:0;
+	margin-left:-192px;
+	background-color:rgba(212, 124, 0, 0.809);
+    animation: spinner 3s infinite linear;
+}
+@keyframes spinner{
+	0%{
+		margin-left:-192px;
+	}
+	50%{
+		margin-left:192px;
+	}
+  100%{
+		margin-left:-192px;
+	}
+}

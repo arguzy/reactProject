@@ -3,12 +3,18 @@ import './Buttons.css';
 import {FaPlus, FaMinus} from 'react-icons/fa';
 
 const CounterTab = () => {
-    const [counter, setCounter] = useState(0);
+
+    const [counter, setCounter] = useState(1);
+    let stock = 10
+
     const Plus = () =>{
-    setCounter(counter + 1);
+        if (counter < stock){
+        setCounter(counter + 1);
+    }
     }
     const Minus = () =>{
-    setCounter(counter - 1);
+        if (counter > 1){
+        setCounter(counter - 1);}
     }
 
     return (

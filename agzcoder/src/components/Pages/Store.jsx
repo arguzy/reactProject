@@ -2,7 +2,7 @@ import React, {Fragment} from 'react';
 import ProductCardDef from '../Cards/Products/ProductCardDef';
 import LittleWing from '../../Media/Appetizer/LittleWing.jpg';
 import Everlong from '../../Media/Appetizer/Everlong.jpg';
-import './Pages.modules.css';
+import './Store.modules.css';
 
 
 const Store = () => {
