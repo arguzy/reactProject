@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import CounterTab from "../../Buttons/CounterTab";
 import {BsArrowDownLeftCircle} from 'react-icons/bs';
+import CounterTab from "../../Buttons/CounterTab";
 import '../Card.modules.css';
 
-function ProductCardDef ({imageSrc , name, ingredient, price}) {
+function ProductCardDef ({imageSrc , name, ingredient, price, stock}) {
     const [DropDawn, setDropDawn] = useState(false)
     const DropBtn = ()=>{
         setDropDawn(!DropDawn)
@@ -33,8 +33,8 @@ function ProductCardDef ({imageSrc , name, ingredient, price}) {
                     <p className="cardProducts__text">{ingredient}</p>
                 </div>
                 <div className="cardProducts__amountBox">
-                    <p className="cardProducts__price">Precio: {price}</p>
-                    <CounterTab/>
+                    <p className="cardProducts__price">Precio:$ {price}</p>
+                    <CounterTab onStock={stock}/>
                 </div>
                 <div className="cardProducts__btnBuyBox">
                 <button className="cardProducts__btnBuy">Agregar</button>

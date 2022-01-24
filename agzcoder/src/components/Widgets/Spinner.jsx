@@ -3,7 +3,7 @@ import './Widgets.css';
 
 const Spinner = () => {
     return (
-        <div>
+        <div className='loadOverlay'>
             <div className="load">
             <div className="load__bar">
             </div>

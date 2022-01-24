@@ -1,5 +1,12 @@
-.menu__Appetizer{
+.allProducts{
+    
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 4em;
+    
     margin-top: 4em;
     display: flex;
     flex-flow: wrap;
+    align-items: center;
+    justify-content: centers;
 }

@@ -1,30 +1,30 @@
 import React, {useState} from 'react';
-import './Buttons.css';
 import {FaPlus, FaMinus} from 'react-icons/fa';
+import './Buttons.css';
 
-const CounterTab = () => {
 
-    const [counter, setCounter] = useState(1);
-    let stock = 10
+
+const CounterTab = ({onStock}) => {
+
+    const [counterNumber, setCounter] = useState(1);
 
     const Plus = () =>{
-        if (counter < stock){
-        setCounter(counter + 1);
-    }
-    }
+        if (counterNumber < onStock){
+            setCounter(counterNumber + 1)};
+        }
+    
     const Minus = () =>{
-        if (counter > 1){
-        setCounter(counter - 1);}
-    }
+        if (counterNumber > 1){
+            setCounter(counterNumber - 1)};
+        }
 
     return (
         <div className='counterBox'>
         <button className="counterBox__button" onClick={Minus}><FaMinus/></button>
-        <p className="counterBox__num">{counter}</p>
+        <p className="counterBox__num">{counterNumber}</p>
         <button className="counterBox__button" onClick={Plus}><FaPlus/></button>
-        
         </div>
-    )
+    );
 }
 
 export default CounterTab

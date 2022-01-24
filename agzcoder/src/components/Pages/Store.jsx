@@ -1,31 +1,65 @@
-import React, {Fragment} from 'react';
+import React, {useEffect, useState} from 'react';
 import ProductCardDef from '../Cards/Products/ProductCardDef';
-import LittleWing from '../../Media/Appetizer/LittleWing.jpg';
-import Everlong from '../../Media/Appetizer/Everlong.jpg';
 import './Store.modules.css';
+import Spinner from '../Widgets/Spinner';
 
 
 const Store = () => {
-    return (
-        <Fragment>
-            <section className='menu__Appetizer'>
-        <div>
-            <ProductCardDef 
-            imageSrc={LittleWing}
-            name='Little Wing'
-            ingredient='Pechuguitas pollo extra crocantes, sazonadas con tomillo, albahaca, orégano, sal de apio, pimienta negra, mostaza en polvo, pimentón, sal de ajo y jengibre en polvo. Viene con dip de salsa barbacoa.'
-            price="$480"/>
-        </div>
+
+    const [products, setProducts] = useState([]);
+    const [errors, setErrors] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+
+    useEffect(() => {
+        const URL = "http://localhost:3001/listProducts";
         
-        <div>
-            <ProductCardDef 
-            imageSrc={Everlong}
-            name='Everlong'
-            ingredient='Cubos de Mandioca (Yuca) empanados con sazonado de perejil, ajo y mostaza ahumada en polvo. Viene con dip de manteca de cilantro y limón.'
-            price="$350"/>
-        </div>
-            </section>
-        </Fragment>
+            setIsLoading(true);
+
+                const getProducts = async ()=>{
+
+                    try{
+                        const response = await fetch(URL);
+                        const data = await response.json();  
+                        setProducts(data);
+                        } catch(err){
+                            setErrors(err)
+                        } finally{
+                            setIsLoading(false);
+                        }
+        };
+    
+        setTimeout(() => {        
+            getProducts();
+        }, 2000);
+    }, []);
+    
+    if(isLoading){
+        return <Spinner/>
+    }else if(errors){
+        return <p>"Errorazo"</p>;
+    }
+    
+    
+
+
+    return (
+        <section className='allProducts'>
+                {products.map((product)=>{
+                return (
+                
+                    <div key={product.id}>
+                        <ProductCardDef  
+                        imageSrc={product.imageSrc}
+                        name={product.name}
+                        ingredient={product.ingredient}
+                        price={product.price}
+                        stock={product.stock}/>
+                    </div>
+                )
+            })}
+        
+         
+        </section>
     )
 }
 
