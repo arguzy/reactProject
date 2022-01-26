@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import ProductCardDef from '../Cards/Products/ProductCardDef';
+import ProductCardDef from '../../components/Cards/Products/ProductCardDef';
+import Spinner from '../../components/Widgets/Spinner';
 import './Store.modules.css';
-import Spinner from '../Widgets/Spinner';
 
 
 const Store = () => {
@@ -11,7 +11,7 @@ const Store = () => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        const URL = "http://localhost:3001/listProducts";
+        const URL = "http://localhost:3001/inventory";
         
             setIsLoading(true);
 
@@ -20,7 +20,7 @@ const Store = () => {
                     try{
                         const response = await fetch(URL);
                         const data = await response.json();  
-                        setProducts(data);
+                            setProducts(data);
                         } catch(err){
                             setErrors(err)
                         } finally{
@@ -28,16 +28,16 @@ const Store = () => {
                         }
         };
     
-        setTimeout(() => {        
+            
             getProducts();
-        }, 2000);
+     
     }, []);
     
     if(isLoading){
         return <Spinner/>
     }else if(errors){
         return <p>"Errorazo"</p>;
-    }
+    } 
     
     
 
@@ -48,10 +48,10 @@ const Store = () => {
                 return (
                 
                     <div key={product.id}>
-                        <ProductCardDef  
+                        <ProductCardDef
                         imageSrc={product.imageSrc}
                         name={product.name}
-                        ingredient={product.ingredient}
+                        ident={product.id}
                         price={product.price}
                         stock={product.stock}/>
                     </div>

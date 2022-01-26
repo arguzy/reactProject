@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
-import {BsArrowDownLeftCircle} from 'react-icons/bs';
+import React from 'react';
+import {MdOutlineSubject} from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 import CounterTab from "../../Buttons/CounterTab";
 import '../Card.modules.css';
 
-function ProductCardDef ({imageSrc , name, ingredient, price, stock}) {
-    const [DropDawn, setDropDawn] = useState(false)
-    const DropBtn = ()=>{
-        setDropDawn(!DropDawn)
-    }
+function ProductCardDef ({ident, imageSrc , name, price, stock}) {
+
+    const navigate = useNavigate();
+    
     return (
+        
         <div className="cardProducts">
             <div className="cardProducts__ImageBox">
                 <img className="cardProducts__Image" src={imageSrc} alt={name} />
@@ -18,20 +19,12 @@ function ProductCardDef ({imageSrc , name, ingredient, price, stock}) {
                     <div className="cardProducts__titleBox">
                         <h2 className="cardProducts__title">{name}</h2>
                     </div>
-                    <div className="cardProducts__btnDescription" >
-                        <button className="dropDownDescription" onClick={DropBtn}> 
-                            <span className='dropDownDescription__icon'>
-                                <BsArrowDownLeftCircle className={DropDawn ? 'dropDownClose' : 'dropDownOpen'}/>
-                            </span>
-                            <span className="dropDownDescription__text">
-                                Descripción
-                            </span>
-                        </button>
-                    </div>
+                    <button className="cardProducts__DetailBtn" onClick={() => navigate(`ProductDetails/${ident}`)}> 
+                    <span className='cardProducts__DetailBtnIcon'><MdOutlineSubject className='DetailEfxOff'/></span>
+                    <span className="cardProducts__DetailBtnText">Ver Más!</span>
+                    </button>
                 </div>
-                <div className={DropDawn ? "cardProducts__textBox textBoxOpen" : "cardProducts__textBox"}>
-                    <p className="cardProducts__text">{ingredient}</p>
-                </div>
+
                 <div className="cardProducts__amountBox">
                     <p className="cardProducts__price">Precio:$ {price}</p>
                     <CounterTab onStock={stock}/>

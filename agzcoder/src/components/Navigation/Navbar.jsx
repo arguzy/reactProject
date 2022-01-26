@@ -12,14 +12,14 @@ import './NavBar.css';
         return ( 
             <nav className={show ? 'nav' : 'nav fixed'}>
                 <div className='nav__motley'>
-                    <Link to='Home' className='nav__logo'>LA BOHEME</Link>
+                    <Link to='./Store/ProductDetail2' className='nav__logo'>LA BOHEME</Link>
                     <div className='nav__shop'>
                         <Cart/>
                     </div>
                 </div>
                 <button className='nav__btnToggle' onClick={ToggleMenu}><FaBars/></button>
                 <ul className={show ? 'nav__menu nav__menuVisible' : 'nav__menu'} >
-                    <li className='nav__menuItem'><Link to='./Home' className='nav__menuLink' onClick={ToggleMenu}>Inicio</Link></li>
+                    <li className='nav__menuItem'><Link to='./' className='nav__menuLink' onClick={ToggleMenu}>Inicio</Link></li>
                     <li className='nav__menuItem'><Link to='./Contact' className='nav__menuLink' onClick={ToggleMenu}>Quiénes Somos</Link></li>
                     <li className='nav__menuItem'><Link to='./Store' className='nav__menuLink' onClick={ToggleMenu}>Menú y Delivery</Link></li>
                     <li className='nav__menuItem'><Link to='./Faqs' className='nav__menuLink' onClick={ToggleMenu}>Preguntas Frecuentes</Link></li>

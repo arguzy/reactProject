@@ -14,9 +14,16 @@ header{
 }
 body{
     position: relative;
-    min-height: 100vh;
-    padding-bottom: 4em;
+    min-height: 125vh;
+    padding-bottom: 10em;
 }
+
 footer{
     direction: initial;
+}
+
+@media (min-width: 768px){
+    body{
+    padding-bottom: 4em;
+    }
 }

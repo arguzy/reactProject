@@ -33,7 +33,7 @@
 	padding: 5px 10px;
 }
 
-.dropDownDescription {
+.cardProducts__DetailBtn {
 	padding: 2px 4px;
 	font-family: 'Lexend Deca', sans-serif;
 	color: rgb(255, 255, 255);
@@ -47,26 +47,26 @@
 	display: inline-flex;
 	align-items: center;
 }
-.dropDownDescription:hover {
+.cardProducts__DetailBtn:hover {
 	background: linear-gradient(180deg, rgba(223, 134, 0, 0.5)  5%, rgb(255, 175, 36) 100%);
 }
-.dropDownDescription__icon {
+.cardProducts__DetailBtnIcon{
 	font-size: 15px;
 	padding: 5px 5px;
 	border-right: 1px solid rgba(255, 255, 255, 0.076);
 	box-shadow: rgba(41, 41, 41, 0.14) -1px 0px 0px inset;
 }
 
-.dropDownOpen{
+.DetailEfxOn{
 	transition: 1s ease-in;
 }
 
-.dropDownClose{
+.DetailEfxOff{
 	transition: 1s ease-in;
 	transform: rotateZ(185deg);
 };
 
-.dropDownDescription__text {
+.cardProducts__DetailBtnText {
 	font-size: 1.4em;
 	padding: 10px;
 }
