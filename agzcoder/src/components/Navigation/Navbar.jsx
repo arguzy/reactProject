@@ -12,7 +12,7 @@ import './NavBar.css';
         return ( 
             <nav className={show ? 'nav' : 'nav fixed'}>
                 <div className='nav__motley'>
-                    <Link to='./Store/ProductDetail2' className='nav__logo'>LA BOHEME</Link>
+                    <Link to='/' className='nav__logo'>LA BOHEME</Link>
                     <div className='nav__shop'>
                         <Cart/>
                     </div>

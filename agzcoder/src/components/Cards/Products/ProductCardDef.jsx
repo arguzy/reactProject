@@ -19,7 +19,7 @@ function ProductCardDef ({ident, imageSrc , name, price, stock}) {
                     <div className="cardProducts__titleBox">
                         <h2 className="cardProducts__title">{name}</h2>
                     </div>
-                    <button className="cardProducts__DetailBtn" onClick={() => navigate(`ProductDetails/${ident}`)}> 
+                    <button className="cardProducts__DetailBtn" onClick={() => navigate(`Store/${ident}`)}> 
                     <span className='cardProducts__DetailBtnIcon'><MdOutlineSubject className='DetailEfxOff'/></span>
                     <span className="cardProducts__DetailBtnText">Ver Más!</span>
                     </button>
