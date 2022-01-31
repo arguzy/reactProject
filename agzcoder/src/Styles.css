@@ -7,23 +7,7 @@
 }
 
 
-header{
-    display: inline-block;
-    height: 15vw;
-    max-height: 3em;
-}
 body{
-    position: relative;
-    min-height: 125vh;
-    padding-bottom: 10em;
-}
-
-footer{
-    direction: initial;
-}
-
-@media (min-width: 768px){
-    body{
-    padding-bottom: 4em;
-    }
+    min-width: 100vw;
+    min-height: 100vh;
 }

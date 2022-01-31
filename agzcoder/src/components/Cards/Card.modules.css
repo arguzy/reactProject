@@ -1,27 +1,26 @@
 .cardProducts {
-    margin: 10px;
-    width: 240px;
-	height: 560px;
-    border-radius: 5px;
-    border-top-right-radius: 50px;
-    border: 1px solid gray;
+    z-index: 1;
+    width: calc(235px + 10vw);
+    max-width: 285px;
+    border-radius: 20px;
+    border: solid 1px rgb(41, 41, 41);
     overflow-y: clip;
-	background: rgb(255, 245, 225);
-	box-shadow: rgb(163, 163, 163) 0px 30px 25px -15px,
-    rgba(0, 0, 0, 0.309) -10px 30px 40px 15px inset;
     display: flex;
     flex-flow: column;
     align-items: center;
     justify-content:flex-start;
+    background: rgb(113,113,113);
+    background: linear-gradient(45deg, rgba(113,113,113,1) 0%, rgba(190,190,190,0.8575805322128851) 50%, rgba(102,102,102,1) 100%);
+    box-shadow: -5px -6px 2px 1px rgba(49, 49, 49, .8),
+                13px 13px 20px 1px rgba(38, 38, 38 ,.5),
+                inset 6px -5px 8px 2px rgba(255, 255, 255, .7);
 }
 
 .cardProducts__Image{
-    width: 240px;
-	height: 190px;
-    border-bottom-left-radius: 50px;
-    border-top-right-radius: 50px;
-
-    box-shadow: rgba(71, 60, 60, 0.124) 1px 1px 1px 10px;
+    width: calc(235px + 10vw);
+    max-width: 285px;
+	height: calc(150px + 5vh);
+    box-shadow: 0px 5px 5px 0px rgba(3, 3, 3, 0.7);
 }
 
 .cardProducts__infoBox{
@@ -30,17 +29,26 @@
     display: flex;
     flex-flow: column;
     justify-content:space-between;
+    box-shadow: inset 20px -20px 20px 10px rgba(124, 124, 124, 0.7);
 
 }
 
 .cardProducts__titleBox{
-    padding: 15px 0px;
+    height: calc(4em + 3vw);
+    padding: 0px 5px;
+    background: hsl(39deg 100% 75% / 56%);
+    box-shadow: -1px 4px 1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
   }
 
 .cardProducts__title{
-  text-align: center;
-  font-size: 2em;
-  font-family: 'Lexend Deca', sans-serif;
+    text-align: center;
+    font-size: calc(1.2em + 1vw);
+    font-family: 'Lexend Deca', sans-serif;
+    text-shadow: 1px -1px 0px hsla(0, 0%, 0%, 0.7);
 }
 
 .cardProducts__DetailBox{
@@ -67,81 +75,365 @@
 }
 
 .cardProducts__amountBox{
+    margin: 15px 0px;
     padding: 0 25px;
     display: flex;
     justify-content: space-between;
 }
 .cardProducts__price{
+    color: white;
+    text-shadow: 1px 2px 2px black;
     font-family: 'Lexend Deca' , sans-serif;
     font-size: 1em;
     font-weight: 800;
 }
 
-.cardProducts__btnBuyBox{
+.cardProducts__btnBox{
     padding: 25px 0px 20px 0px;
     display: flex;
-    flex-flow: column;
-    align-items: center;
+    flex-flow: row;
+    align-self: center;
+    justify-content: space-between;
 }
 
 .detailCard{
-    width: 80vw;
-    height: 90vh;
-    margin: 20px;
+    min-width: 100vw;
+    min-height: fit-content;
+    padding: 2em 0em;
+    background: linear-gradient(45deg, rgb(21, 21, 21) 0%, rgba(116, 116, 116, 0.8) 50%, rgb(34, 34, 34) 100%);
     display: flex;
     flex-flow: column;
-    justify-content: space-between;
     align-items: center;
-    border: solid red 1px
+}
+
+.detailCard__container{
+    width: 85vw;
+    min-height: 90vh;
 }
 
 .detailCard__image{
-    width:100%;
-    height: 50%;
-    border: solid red 1px
-
-}
-.detailCard__container{
-    height: 50%;
     width: 100%;
+    height: 45%;
+    border: solid rgb(0 0 0) 1px;
+    box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.3);
+    animation: flickerShadowImage 2s linear  1;
+}
+
+.detailCard__titleBox{
+    width: 100%;
+    height: fit-content;
+    padding: 1em;
     display: flex;
     flex-flow: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-evenly;
-}
-.detailCard__head{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-content: center;
-    border: solid red 1px
+	border: 1px rgb(77, 77, 77) solid;
+	background: linear-gradient(160deg, rgba(160, 148, 106, 0.2) 0%, rgba(165, 164, 164, 0.35) 100%);
+	box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+	                  5px 10px 20px 5px rgb(255, 255, 255);
+    animation: flickerShadowLead 2s linear  1;
 
 }
 
 .detailCard__title{
     width: 80%;
-    font-size: calc(10px + 2vw);
+    font-size: calc(25px + 2vw);
     text-align: center;
-    font-family: 'Lexend Deca', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bolder;
+    color: rgb(230, 230, 230);
+    text-shadow: 2px 3px 5px rgb(21, 21, 21);
 }
 
-.detailCard__foot{
-    height: 80%;
+.detailCard__drop{
+    width: 100%;
+    height: 235px;
+    min-height: fit-content;
+    padding: 1em 0em 0em 0em;
     display: flex;
     flex-flow: column;
-    justify-content:space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detailCard__btnBackBox{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.detailCard__btnBack{
+    all: unset;
+    padding: .2em;
+    border: 1px solid rgba(255, 255, 255, 0.227);
+	background: rgba(0, 0, 0, 0.2);
+	text-shadow: 3px 1px 2px rgb(0, 0, 0);
+	box-shadow: inset 1px 1px 2px 0px rgba(253, 253, 253, 0.337);
+}
+
+.detailCard__btnBack:active{
+	background: linear-gradient(90deg, rgba(238, 192, 99, 0.15) 5%, rgba(207, 161, 70, 0.15) 100%);
+}
+
+.detailCard__btnBackLink{
+    text-decoration: none;
+    font-family: 'Lexend Deca', sans-serif;
+	color: rgb(255, 255, 255);
+	font-size: 4vw;
+}
+
+.detailCard__ingredientBox{
+    height: fit-content;
+    padding: 0px 5px;
+    background: linear-gradient(149deg, rgba(177,155,88,1) 0%, rgba(233,204,113,1) 20%, rgba(181,158,90,1) 40%, rgba(240,210,116,0.9444152661064426) 60%, rgba(200,175,98,1) 80%, rgba(213,186,102,1) 100%);
+    box-shadow: 3px 9px 3px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    animation: flickerShadowIngredient 2s linear  1;
 }
 
 .detailCard__ingredient{
-    font-size: calc(8px + 2vw);
-    font-weight: 900;
-    text-align: justify;
+    width: 90%;
+    padding: .5em;
     font-family: 'Lexend Deca', sans-serif;
+    text-align: justify;
+    font-size: calc(5px + 2vw);
+    color: rgb(19, 19, 19);
+    text-shadow: 1px 2px 1px rgb(255, 255, 255);
 }
-.detailCard__btns{
+.detailCard__btns,
+.detailCard__amountBox{
+    width: 100%;
+    height: fit-content;
+    padding: .5em;
     display: flex;
-    justify-content: space-between;
+    flex-flow: row;
+    align-content: center;
+    justify-content:space-between;
+}
+.detailCard__amountBox{
+    justify-content:flex-start;
+}
+.detailCard__price{
+    margin-right: 30px;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 2px 1px rgb(19, 19, 19) ;
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1.3em;
+    font-weight: 800;
+}
 
+.detailCard__btnBuyNow,
+.detailCard__btnAddCart{
+    font-family: 'Lexend Deca', sans-serif;
+    color: rgb(255, 255, 255);
+	font-size: 1em;
+	border: none;
+	border-radius: 20px;
+	padding: 5px 10px;
+	background: linear-gradient(180deg, rgb(238, 192, 99) 5%, rgb(207, 161, 70) 100%);
+	text-shadow: 2px 1px 1px rgb(143, 102, 40);
+	box-shadow: inset 1px 1px 2px 0px rgb(247, 232, 187);
+	cursor: pointer;
+	display: inline-flex;
+	align-items: center;
+}
+
+.detailCard__btnBuyNow{
+margin-right: 10px;}
+
+.detailCard__btnBuyNow:active,
+.detailCard__btnAddCart:active {    
+	background: linear-gradient(120deg, rgba(223, 134, 0, 0.5)  30%, rgb(255, 175, 36)  80%);
+
+}
+
+@keyframes flickerShadowLead {
+ 0%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(0, 0, 0, 0);}
+10%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 0.5);}
+20%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(0, 0, 0, 0);}
+30%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 0.4);}
+40%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(0, 0, 0, 0);}
+50%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 0.6);}
+60%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 0.8);}
+70%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 1);}
+80%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(0, 0, 0, 0);}
+90%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 1);}
+100%{box-shadow: inset 20px 0px 15px 0px rgba(102, 102, 102, 0.7),
+                5px 8px 20px 5px rgba(255, 255, 255, 1);}
+}
+
+
+@keyframes flickerShadowImage {
+    0%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0);}
+    10%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.1);}
+    20%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0);}
+    30%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.1);}
+    40%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0);}
+    50%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.1);}
+    60%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.2);}
+    70%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.3);}
+    80%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0);}
+    90%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.3);}
+    100%{box-shadow: -4px -4px 1px 1px rgba(0, 0, 0, 0.3);}
+}
+
+@keyframes flickerShadowIngredient {
+    0%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0);}
+    10%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.1);}
+    20%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0);}
+    30%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.1);}
+    40%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0);}
+    50%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.1);}
+    60%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.2);}
+    70%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.3);}
+    80%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0);}
+    90%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.3);}
+    100%{box-shadow: 3px 9px 4px 0px rgba(0, 0, 0, 0.3);}
+}
+
+
+@media (min-width: 690px) {  
+    .detailCard{
+        min-height: fit-content;
+        padding: 0px 0px 50px 0px;
+    }  
+    .detailCard__container{
+        width: 100vw;
+        padding: 1em 2em;
+        display: grid;
+        grid-template-columns:2fr 1fr 1fr;
+        grid-template-rows: 15vh 5vh 40vh auto;
+    }
+    
+    .detailCard__image{
+        all:unset;
+        margin: 0em  1em ;
+        width: 40vw;
+        height: 50vh;
+        border: 2px solid black;
+        grid-row: 3; 
+        grid-column: 1/2;
+        box-shadow: -5px 10px 5px 3px rgb(36, 36, 36);
+        animation: flickerShadowImage 2s linear  1;
+    }
+    
+    .detailCard__titleBox{
+        grid-row: 1; 
+        grid-column: 1/4;
+    }
+    
+    .detailCard__title{
+        font-size: 8vh;
+
+    }
+    
+    .detailCard__drop{
+        all:unset;
+        grid-row: 2 / 4; 
+        grid-column: 2 / 4;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 5fr 1fr 1fr;
+    }
+    
+    .detailCard__btnBackBox{
+        padding: 0em 1em;
+        grid-row: 1; 
+        grid-column: 1/4;
+        box-shadow: none;
+    }
+    
+    .detailCard__btnBack{
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    
+    .detailCard__btnBack:active{
+        background: none;
+        
+    }
+    
+    .detailCard__btnBackLink{
+        font-size: 1.5em;    
+    }
+    .detailCard__btnBackLink:hover{
+        color: rgba(238, 179, 30, 0.665);
+         
+    }
+    
+    .detailCard__ingredientBox{
+        grid-row: 2; 
+        grid-column: 1/4;
+
+    }
+    
+    .detailCard__btns,
+    .detailCard__amountBox{
+        justify-content: space-around;
+        padding: 1em;
+    }
+    .detailCard__amountBox{
+        grid-row: 3; 
+        grid-column: 1/4;
+        justify-content: space-between;
+        align-items: center;
+        width: fit-content;
+
+    }
+
+    .detailCard__btns{
+        width: 90%;
+        justify-content: space-between;
+    }
+    .detailCard__price{
+        margin-right: 30px;
+        font-size: 2.5vw;
+    }
+    .detailCard__btnBuyNow,
+    .detailCard__btnAddCart{
+        padding: .6vh .6vw;
+        font-size: 2vw;
+        grid-row: 4; 
+        grid-column: 1/4;
+        
+    }
+    
+    .detailCard__btnAddCart{
+        margin-left: 10px;
+    }
+    .detailCard__btnBuyNow:hover,
+    .detailCard__btnAddCart:hover {    
+        background: linear-gradient(120deg, rgba(223, 134, 0, 0.5)  30%, rgb(255, 175, 36)  80%);
+    
+    }
+
+    @keyframes flickerShadowImage {
+        0%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0);}
+        10%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.1);}
+        20%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0);}
+        30%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.1);}
+        40%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0);}
+        50%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.1);}
+        60%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.2);}
+        70%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.3);}
+        80%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0);}
+        90%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.3);}
+        100%{box-shadow: -5px 10px 5px 3px rgba(0, 0, 0, 0.3);}
+    }
 }
