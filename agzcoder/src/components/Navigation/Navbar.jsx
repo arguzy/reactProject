@@ -10,7 +10,7 @@ import './NavBar.css';
         const ToggleMenu = () => setShow(!show);  
 
         return ( 
-            <nav className='nav'>
+            <nav className={show ? 'nav' : 'nav fixed'}>
                 <div className='nav__motley'>
                     <Link to='/' className='nav__logo'>LA BOHEME</Link>
                     <div className='nav__shop'>

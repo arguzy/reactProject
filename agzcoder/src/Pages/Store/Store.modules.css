@@ -1,57 +1,12 @@
-.menu{
-    overflow: hidden ;
-    bottom: 0%;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(45deg, rgb(21, 21, 21) 0%, rgba(116, 116, 116, 0.8) 50%, rgb(34, 34, 34) 100%);
-}
-
-.menu__cover{
-    height: fit-content;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.menu__titleBox {
-    margin: 50px;
-    background: rgb(0, 0, 0);
-    min-height: calc(1.2em + 10vw);;
-    width: 100vw;
-    display: flex;
-    flex-flow: nowrap;
-    align-items: center;
-    overflow: hidden;
-    box-shadow: inset -11px -3px 20px 20px rgba(126, 126, 126, 0.01);
-}
-
-.menu__title {
-    letter-spacing: 25px;
-    padding: 0.2em 2em 0em 0em;
-    color: rgb(255, 182, 47);
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: calc(1em + 5vw);
-    animation: titleLoop 10s linear infinite;
-}
-
-.menu__productBox {
+.allProducts{
+    
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 4em;
+    
+    margin-top: 4em;
     display: flex;
     flex-flow: wrap;
-    justify-content: center;
     align-items: center;
-
+    justify-content: centers;
 }
-.menu__product{
-    margin: 10px;
-}
- 
-  @keyframes titleLoop {
-	0% 
-		{transform: translateX(0)}
-	100% 
-		{transform: translateX(-100%)}
-  }
-

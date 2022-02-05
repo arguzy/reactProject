@@ -18,19 +18,19 @@ function ProductCardDef ({ident, imageSrc , name, price, stock}) {
                 <div>
                     <div className="cardProducts__titleBox">
                         <h2 className="cardProducts__title">{name}</h2>
-                    </div>  
+                    </div>
+                    <button className="cardProducts__DetailBtn" onClick={() => navigate(`Store/${ident}`)}> 
+                    <span className='cardProducts__DetailBtnIcon'><MdOutlineSubject className='DetailEfxOff'/></span>
+                    <span className="cardProducts__DetailBtnText">Ver Más!</span>
+                    </button>
                 </div>
 
                 <div className="cardProducts__amountBox">
                     <p className="cardProducts__price">Precio:$ {price}</p>
                     <CounterTab onStock={stock}/>
                 </div>
-                <div className="cardProducts__btnBox">
-                    <button className="cardProducts__DetailBtn" onClick={() => navigate(`Store/${ident}`)}>
-                        <span className='cardProducts__DetailBtnIcon'><MdOutlineSubject/></span>
-                        <span className="cardProducts__DetailBtnText">Ver Más!</span>
-                    </button>
-                    <button className="cardProducts__btnBuy">Comprar</button>
+                <div className="cardProducts__btnBuyBox">
+                <button className="cardProducts__btnBuy">Agregar</button>
                 </div>
             </div>
         </div>

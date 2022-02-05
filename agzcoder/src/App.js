@@ -10,8 +10,8 @@ import Faqs from './Pages/Faqs';
 import Store from './Pages/Store/Store';
 import ProductDetail from './Pages/Store/ProductDetail';
 import OrderSumary from './Pages/Store/OrderSumary';
-import PageNotFound from './Pages/Error404/PageNotFound';
-//import Footer from './components/Footer/Footer';
+import PageNotFound from './Pages/PageNotFound';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -40,7 +40,9 @@ function App() {
                   <Route path='*' element={<PageNotFound/>} />
               </Routes>
         
-
+        <footer>
+          <Footer/>
+        </footer>
       </BrowserRouter>
     </Fragment>
     
