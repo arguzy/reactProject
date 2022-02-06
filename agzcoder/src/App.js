@@ -3,15 +3,15 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './Styles.css';
 
-import Navbar from './components/Navigation/Navbar';
-import Home from './Pages/Home/Home';
-import Contact from './Pages/Contact';
-import Faqs from './Pages/Faqs';
-import Store from './Pages/Store/Store';
-import ProductDetail from './Pages/Store/ProductDetail';
-import OrderSumary from './Pages/Store/OrderSumary';
-import PageNotFound from './Pages/PageNotFound';
-import Footer from './components/Footer/Footer';
+import Navbar from './components/navigation/Navbar';
+import Home from './pages/home/Home';
+import Contact from './pages/contact/Contact';
+import Faqs from './pages/faqs/Faqs';
+import Store from './pages/store/Store';
+import ProductDetail from './pages/store/ProductDetail';
+import OrderSumary from './pages/store/OrderSumary';
+import PageNotFound from './pages/errors/PageNotFound';
+//mport Footer from './components/footer/Footer';
 
 
 
@@ -29,20 +29,18 @@ function App() {
               <Routes >
                 <Route path='/'>
                   <Route index element={<Home/>} />
-                  <Route path='Contact' element={<Contact/>} />
-                  <Route path='Faqs' element={<Faqs/>} />
-                  <Route path='Store'> 
+                  <Route path='contact' element={<Contact/>} />
+                  <Route path='faqs' element={<Faqs/>} />
+                  <Route path='store'> 
                     <Route index element={<Store/>}/>
-                    <Route path='Store/:ident' element={<ProductDetail/>} />
-                    <Route path='OrderSumary' element={<OrderSumary/>} />
+                    <Route path='products/:ident' element={<ProductDetail/>} />
                   </Route> 
+                    <Route path='ordersumary' element={<OrderSumary/>} />
                 </Route>
                   <Route path='*' element={<PageNotFound/>} />
               </Routes>
         
-        <footer>
-          <Footer/>
-        </footer>
+
       </BrowserRouter>
     </Fragment>
     

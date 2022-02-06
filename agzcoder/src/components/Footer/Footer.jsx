@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import SocialMedia from '../Buttons/SocialMedia';
-import Newsletter from '../Widgets/Newsletter';
+import SocialMedia from '../buttons/SocialMedia';
+import Newsletter from '../widgets/Newsletter';
 import './Footer.modules.css';
 
 const Footer = () => {

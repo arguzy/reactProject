@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import {FaBars} from 'react-icons/fa'
-import Cart from '../Widgets/Cart';
+import Cart from '../widgets/Cart';
 import './NavBar.css';
 
     const Navbar = () => {
@@ -10,7 +10,7 @@ import './NavBar.css';
         const ToggleMenu = () => setShow(!show);  
 
         return ( 
-            <nav className={show ? 'nav' : 'nav fixed'}>
+            <nav className='nav'>
                 <div className='nav__motley'>
                     <Link to='/' className='nav__logo'>LA BOHEME</Link>
                     <div className='nav__shop'>
