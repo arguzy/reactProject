@@ -59,6 +59,8 @@ const ProductDetail = () => {
                 ingredient={product.ingredient}
                 price={product.price}
                 stock={product.stock}
+                id={product.id}
+                category={product.category}
                 minus={minus}
                 plus={plus}
                 counter={counter}

@@ -1,20 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Card.modules.css";
 import CounterTab from "../buttons/CounterTab";
 import { Link } from "react-router-dom";
+import CartProvider from "../../context/CartContext";
 
-function DetailCard({
-  imageSrc,
-  name,
-  ingredient,
-  price,
-  stock,
-  plus,
-  minus,
-  counter,
-  amount,
-  subtotal,
-}) {
+function DetailCard({imageSrc,  name,  ingredient,  price,  stock, id, category,  minus, plus,  counter,  amount,  subtotal}) {
+  
+  const {addItem} = useContext(CartProvider);
+
+  const handleClickAdd = () =>{
+    addItem(id, imageSrc, category,  name,  ingredient,  price,  stock, counter)
+  }
+
   return (
     <section className="detailCard">
       <div className="detailCard__container">
@@ -60,11 +57,12 @@ function DetailCard({
           </div>
           <div className="detailCard__btns">
             <button className="detailCard__btnAddCart">
-              <Link to="/Store">Continuar Comprando </Link>
+              <Link to="/Store" >Continuar Comprando </Link>
             </button>
             <button className="detailCard__btnBuyNow">
               <Link to="/OrderSumary">Finalizar Compra </Link>
             </button>
+            <button onClick={handleClickAdd}>check</button>
           </div>
         </div>
       </div>
