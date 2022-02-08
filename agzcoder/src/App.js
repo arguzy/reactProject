@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
 import "./Styles.css";
-
 import Navbar from "./components/navigation/Navbar";
 import Home from "./pages/home/Home";
 import Contact from "./pages/contact/Contact";
@@ -29,7 +27,6 @@ function App() {
                 <Route index element={<Home />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="faqs" element={<Faqs />} />
-
                 <Route path="store">
                   <Route index element={<Store />} />
                   <Route path="products/:ident" element={<ProductDetail />} />

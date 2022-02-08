@@ -12,7 +12,8 @@ const Store = () => {
     return <Spinner />;
   } else if (errors) {
     return <PageNotFound />;
-  } return (
+  }
+  return (
     <section className="menu">
       <div className="menu__cover">
         <div className="menu__titleBox">
