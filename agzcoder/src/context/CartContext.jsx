@@ -1,51 +1,64 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
-const CartContext = createContext({});
-
-export default CartContext;
+export const CartContext = createContext({});
 
 export const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
 
-  const addItem = (id, imageSrc, category,  name,  ingredient,  price,  stock, quantity) => {
-      if (cart.length <= 0){
-          setCart((prevState) => [...prevState, {id, imageSrc, category,  name,  ingredient,  price,  stock, quantity}]);
-          console.log(cart)
-        }
+  const [cart, setCart] = useState([]);
+  
+  
+  const addProduct = (product, quantity) => {
+   const preOrder = {product, quantity}
+
+    if (cart.length <= 0){
+      setCart((prevState) => [...prevState, {product , quantity}]);
+    } 
     else {
-        setCart((prevState) => [...prevState, [id, imageSrc, category,  name,  ingredient,  price,  stock, quantity]]);
-        
-        
-      
-            //setCart((prevState) => console.log(prevState.item))
-            //const idFollow = cart.find(element => element.item.id === cart.item.id )
-            //if(idFollow === undefined){
-            //    console.log("no repite "+idFollow)
-            //    setCart((prevState) => [...prevState, [item, quantity]]);
-            //} else{
-            //    console.log("repite "+idFollow)
-            //}
-        }
+      if (cart.length >= 1){
+        let idFollow = cart.find(e => e.product.id === preOrder.product.id);
+         
+
+          if(idFollow == undefined){
+            setCart((prevState) => [...prevState, {product , quantity}]);
+              
+
+          } else{
+            for (let i= 0; i < cart.length; i++){
+              if(cart[i].product.id === preOrder.product.id){
+                let stockCheck = cart[i].quantity + preOrder.quantity;
+                if(stockCheck <= cart[i].product.stock){
+                  cart[i].quantity =  cart[i].quantity + preOrder.quantity;
+
+                } else { alert("se superó el stock")}
+
+              }
+            }
+          }
+      }
+
+    }
+    
+    
+
+
     }
 
-    //const newProduct = [item, quantity];
-    //console.log(newProduct);
-    //setCart((prevState) => [...prevState, newProduct]);
-    //console.log(cart);
+  
 
     
-    const eraseItem = (id) =>{
+    const eraseProduct = (id) =>{
         setCart ((prev) => prev.filter((element) => element.item.id !== id))
     };
     
-    const eraseItemAll = () =>{
+    const eraseAllProduct = () =>{
         setCart ([]);
     };
     
     return (
-        <CartContext.Provider value={{ cart, addItem, eraseItem, eraseItemAll }}>
+        <CartContext.Provider value={{ cart, addProduct, eraseProduct, eraseAllProduct }}>
       {children}
     </CartContext.Provider>
   );
 };
 
+export const useCart = () => useContext(CartContext);

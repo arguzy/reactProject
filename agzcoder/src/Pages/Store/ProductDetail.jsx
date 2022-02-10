@@ -11,7 +11,7 @@ const ProductDetail = () => {
   const [errors, setErrors] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [counter, setCounter] = useState(1);
-  const [amount, setAmount] = useState();
+  const [amount, setAmount] = useState(0);
 
   useEffect(() => {
     const URL = `http://localhost:3001/inventory/${ident}`;
@@ -47,13 +47,7 @@ const ProductDetail = () => {
 
   return (
     <DetailCard
-      imageSrc={product.imageSrc}
-      name={product.name}
-      ingredient={product.ingredient}
-      price={product.price}
-      stock={product.stock}
-      id={product.id}
-      category={product.category}
+      product={product}
       minus={minus}
       plus={plus}
       counter={counter}

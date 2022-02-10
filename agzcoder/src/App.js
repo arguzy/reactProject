@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./Styles.css";
 import Navbar from "./components/navigation/Navbar";
@@ -15,7 +15,7 @@ import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
-    <Fragment>
+
       <ProductDataProvider>
         <CartProvider>
           <BrowserRouter>
@@ -38,7 +38,7 @@ function App() {
           </BrowserRouter>
         </CartProvider>
       </ProductDataProvider>
-    </Fragment>
+
   );
 }
 

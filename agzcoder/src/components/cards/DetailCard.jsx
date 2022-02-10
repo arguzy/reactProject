@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Card.modules.css";
 import CounterTab from "../buttons/CounterTab";
 import { Link } from "react-router-dom";
-import CartProvider from "../../context/CartContext";
 
-function DetailCard({imageSrc,  name,  ingredient,  price,  stock, id, category,  minus, plus,  counter,  amount,  subtotal}) {
+import { useCart } from "../../context/CartContext";
+
+
+function DetailCard({product,  minus, plus,  counter,  amount,  subtotal}) {
+
+  const {addProduct} = useCart();
+
+  const {imageSrc,  name,  ingredient,  price,  stock} = product;
   
-  const {addItem} = useContext(CartProvider);
-
   const handleClickAdd = () =>{
-    addItem(id, imageSrc, category,  name,  ingredient,  price,  stock, counter)
+    addProduct(product, counter)
   }
 
   return (
