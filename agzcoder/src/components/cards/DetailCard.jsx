@@ -4,17 +4,22 @@ import CounterTab from "../buttons/CounterTab";
 import { Link } from "react-router-dom";
 
 import { useCart } from "../../context/CartContext";
+import Modals from "../widgets/Modals";
+
 
 
 function DetailCard({product,  minus, plus,  counter,  amount,  subtotal}) {
 
-  const {addProduct} = useCart();
+  const {addProduct, cartLenght } = useCart();
 
   const {imageSrc,  name,  ingredient,  price,  stock} = product;
   
   const handleClickAdd = () =>{
-    addProduct(product, counter)
+    addProduct(product, counter, amount)
   }
+
+
+
 
   return (
     <section className="detailCard">
@@ -60,13 +65,13 @@ function DetailCard({product,  minus, plus,  counter,  amount,  subtotal}) {
             />
           </div>
           <div className="detailCard__btns">
-            <button className="detailCard__btnAddCart">
-              <Link to="/Store" >Continuar Comprando </Link>
+            <button className="detailCard__btnAddCart" onClick={handleClickAdd}>
+              Agregar
             </button>
             <button className="detailCard__btnBuyNow">
-              <Link to="/OrderSumary">Finalizar Compra </Link>
+              <Modals buttonText={"Finalizar"} message="Debes agregar algo al carrito" cartLenght={cartLenght} road={"/OrderSumary"}/>
             </button>
-            <button onClick={handleClickAdd}>check</button>
+           
           </div>
         </div>
       </div>

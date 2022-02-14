@@ -241,13 +241,19 @@
 	display: inline-flex;
 	align-items: center;
 }
-.detailCard__btnBuyNow a,
-.detailCard__btnAddCart a{    
+.detailCard__btnBuyNow a {    
     text-decoration: none;
     font-family: 'Lexend Deca', sans-serif;
     text-shadow: 2px 1px 1px rgb(143, 102, 40);
     color: rgb(255, 255, 255);
-	font-size: 1em;
+	font-size: .9em;
+}
+.detailCard__btnAddCart {
+    text-decoration: none;
+    margin-right: 5px;
+	font-size: .8em;
+    font-family: 'Lexend Deca', sans-serif;
+    color: rgb(255, 255, 255);
 }
 
 .detailCard__btnBuyNow{
